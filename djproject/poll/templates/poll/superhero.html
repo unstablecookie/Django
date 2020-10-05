@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}">
+<h1> A IS FOR APPLE </h1>
+
+<ul>
+	{% for superhero in superhero_list %}
+	<li>name: {{ superhero }} , was born : {{ superhero.date }} , his superpower : {{ superhero.superpower }} , how many of this type : {{ superhero.number }}</li>
+	{% endfor %}
+</li><br><br><br>
+<a href="{% url 'poll:superheroadd' %}"> add more? </a>

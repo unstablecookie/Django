@@ -1,0 +1,44 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}">
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.sanic {
+	border: 20px outset green;
+	background-color: lightblue;
+}
+</style>
+</head>
+
+<div class="sanic">
+{% block title %} 
+	<p> 
+		<h6> 
+			<a href="https://google.com" title="dis is de wei"> {{ title }} </a>
+		</h6>
+	</p>
+{% endblock %}
+
+
+{% if latest_question_list %}
+
+	<ul>
+		{% for question in latest_question_list %}
+			<p> {{ f }} </p>
+			<li> <a href=" {% url 'poll:detail' question.id %} "> {{ question.dewei }} </a> </li>
+<!--			<li> <a href="/poll/{{ question.id }}"> {{ question.dewei }} </a> </li> -->
+		{% endfor %}
+	</ul>
+
+{% else %}
+	<p> /-\ </p>
+	<p> | | </p>
+	<p> | | </p>
+	<p>o| |o</p>
+{% endif %}
+</div>
+<img src="https://i.pinimg.com/originals/f8/9e/41/f89e41c758f774b84da69edbb2575bcb.jpg">
+
+</html>
