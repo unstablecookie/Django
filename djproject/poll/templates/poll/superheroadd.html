@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'poll/style.css' %}">
+
+<h2> adding superhero </h2>
+
+<form action="{% url 'poll:superheroprocess' %}" method="post">
+	{% csrf_token %}
+	<label for="sname"> NaMe:</label><br>
+	<input type="text" id="sname" name="sname"><br><br>
+
+	<label for="spower"> SupA powa!</label><br> 
+	<input type="text" id="spower" name="spower"><br><br>
+
+	<label for="sdate"> date of BirTh: </label>
+	<input type="date" id="sdate" name="sdate" value="2019-01-01" min="1111-01-01" max="2020-01-01"><br><br>
+
+	<label for="snum">how many of them?</label><br>
+	<input type="number" id="snum" name="snum"><br><br>
+
+
+	<input type="submit" value="add Hero!">
+</form><br><br><br>
+<a href="{% url 'poll:superhero' %}"> all of them!</a>

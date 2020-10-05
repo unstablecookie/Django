@@ -1,0 +1,14 @@
+{% extends "app1/base_generic.html" %}
+
+{% block content %}
+<h2> adding books right here boyos </h2>
+<form action="{% url 'app1:addbookproc' %}" method="post">
+	{% csrf_token %}
+	<label for="title"> TitiLe:</label>
+	<input type="text" id="title" name="title"><br><br>
+
+	<input type="submit" value="add booK"><br><br>
+
+
+</form>
+{% endblock %}

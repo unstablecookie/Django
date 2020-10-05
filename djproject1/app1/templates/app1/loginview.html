@@ -1,0 +1,15 @@
+{% extends "app1/base_generic.html" %}
+
+{% block content %}
+<h2> LOGIN page </h2>
+<form action="{% url 'app1:process' %}" method="post">
+	{% csrf_token %}
+	<label for="username"> username </label><br>
+	<input type="text" id="username" name="username"><br><br>
+
+	<label for="password"> password </label><br>
+	<input type="password" id="password" name="password"><br><br>
+
+	<input type="submit" value="LOgIn">
+</form>
+{% endblock %}
